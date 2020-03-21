@@ -1,0 +1,51 @@
+<!--
+  Generated template for the FaultRecordPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-select [(ngModel)]="putInto" (ngModelChange)="search()" >
+      <ion-option value="choose">请选择故障类型</ion-option>
+      <ion-option value="0">困人</ion-option> 
+      <ion-option value="1">非门区停梯</ion-option> 
+      <ion-option value="2">冲顶</ion-option> 
+      <ion-option value="3">蹲底</ion-option> 
+      <ion-option value="4">运行中开门</ion-option> 
+      <ion-option value="5">超速</ion-option> 
+      <ion-option value="6">警铃</ion-option> 
+      <ion-option value="7">电压电流异常</ion-option> 
+      <ion-option value="8">抖动</ion-option> 
+      <ion-option value="9">反复开关门</ion-option> 
+      <ion-option value="10">开门故障</ion-option> 
+      <ion-option value="11">轿厢意外移动</ion-option> 
+      <ion-option value="128">停电</ion-option> 
+    </ion-select>
+  </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-grid  >
+      <ion-row >
+        <ion-col col-6 >报警时间</ion-col>
+        <ion-col col-3 >持续时间</ion-col>
+        <ion-col col-3 >故障类型</ion-col>
+      </ion-row>
+    </ion-grid>
+    <div id="delay" style="display:none"> 
+      <img src="assets/imgs/no.png" style="margin-left: 27px; margin-top: 52px;max-width: 88%;">
+      <p style="text-align: center;font-size: 18px;">近7天暂无故障信息</p>
+    </div>  
+    <div *ngFor="let item of list" >
+      <ion-grid  >
+        <ion-row >
+          <ion-col col-6 >{{item.Edate}}</ion-col>
+          <ion-col col-3 >{{item.Ekeepdate}}</ion-col>
+          <ion-col col-3 class="yellow">{{item.Etype}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div> 
+</ion-content>

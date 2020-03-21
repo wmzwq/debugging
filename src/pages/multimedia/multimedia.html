@@ -1,0 +1,92 @@
+<!--
+  Generated template for the MultimediaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-title>多媒体机信息</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div class="inputBox" >
+        <ion-icon name="search" style=" position: absolute;top: 13px;right:35px;font-size: 27px;" (tap)="search() "></ion-icon>
+        <input type="text"  [(ngModel)]="inputContent"  >
+  </div>
+<div >
+  <ion-list >
+    <ion-item>
+      <ion-label>电梯编号</ion-label>
+      <input type="text" id="Enumber" readonly item-end value={{Enumber}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>多媒体机名称</ion-label>
+      <input type="text" id="Ename"  item-end value={{F_Name}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>多媒体机状态</ion-label>
+      <input type="text"   id="Erecorder"  item-end value={{Online}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>投运状态</ion-label>
+      <ion-select [(ngModel)]="putInto">
+        <ion-option value="choose">请选择</ion-option>
+        <ion-option value="put">投运</ion-option>
+        <ion-option value="test">测试</ion-option>
+        <ion-option value="inventory">库存</ion-option>
+        <ion-option value="disable">停用</ion-option>
+        <ion-option value="pass">验收通过</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>网络类型</ion-label>
+      <ion-select [(ngModel)]="networkType">
+          <ion-option value="choose">请选择</ion-option>
+          <ion-option value="telecomB">电信宽带</ion-option>
+          <ion-option value="mobileB">移动宽带</ion-option>
+          <ion-option value="unicomB">联通宽带</ion-option>
+          <ion-option value="trafficC">电信流量卡</ion-option>
+          <ion-option value="mobileC">移动流量卡</ion-option>
+          <ion-option value="unicomC">联通流量卡</ion-option>
+          <ion-option value="other">其他</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>摄像头类型</ion-label>
+        <ion-select [(ngModel)]="androidBox">
+            <ion-option value="choose">请选择</ion-option>
+            <ion-option value="singleCamera">单摄像头</ion-option>
+            <ion-option value="externalBox">外接安卓盒子</ion-option>
+            <ion-option value="ys">萤石摄像头</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>水印颜色</ion-label>
+        <ion-select [(ngModel)]="color">
+            <ion-option value="black">黑色</ion-option>
+            <ion-option value="white">白色</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>备注</ion-label>
+        <input type="text" id="F_Remark" item-end value={{F_Remark}}>
+      </ion-item>
+      <ion-item>
+          <ion-label>操作</ion-label>
+          <input  type="text" readonly  (tap)="gocontrol()" style="width: 80px;height: 32px; border-radius: 16px; border: 1px solid #4B5E90; text-align: center;color: #4B5E90;font-size: 14px;font-family: PingFang SC Regular;"item-end value= "设备控制">
+        </ion-item>
+       
+  </ion-list>
+</div>
+</ion-content>
+<ion-footer align-title="left" class="bar-assertive">
+    <div class="input-box">
+        <input type="text" readonly value="多媒体重启" (tap)="restart()">
+        <!-- <input type="text" readonly value="多媒体闭合" (tap)="upload()">
+        <input type="text" readonly value="多媒体断开" (tap)="down()" > -->
+        <input type="text" readonly value="修改编号" (tap)="Modify()" > 
+        <input type="text" readonly value="确认更改"  (tap)="confirm()">
+    </div>
+</ion-footer>

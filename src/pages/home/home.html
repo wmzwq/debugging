@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+        <button ion-button icon-only >
+          电梯调试
+        </button>
+      </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only (tap)="my()">
+          我的
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="height:100%">
+  <div class="input-box" >
+      <ion-input type="text"  [(ngModel)]="inputContent" (ionChange)="change()"></ion-input>
+      <ion-label style=" position: absolute;top: 13px; right: 40px;font-size: 20px;" (tap)="onchange()"> <ion-icon name="search"></ion-icon></ion-label>
+  </div>
+ 
+  <div class="condition">
+    <div style="float:left;display: flex;">
+   <img src="../assets/imgs/在线.png"  id="Eimg" style="margin-right:4px;width: 18px; height: 18px;"/>
+    <span>电梯状态:{{Estatus}}</span>
+  </div>
+  <div style="float:left;display: flex;">
+    <img src="../assets/imgs/在线.png" id="Mimg"  style="margin-right:4px;width: 18px;height: 18px;"/>
+    <span>多媒体机状态:{{Mstatus}}</span>
+  </div>
+  </div>
+
+<div class="partent_urlBox" > 
+  <div class="urlBox urlBox-top1" (click)="archives()">
+      <img src="../assets/imgs/电梯档案.svg"   style=" height:auto; width: 26%;margin-top: 13px;"/>
+      <div  class="urlBox-child">电梯档案</div>
+  </div>
+  <div class="urlBox urlBox-top1" (click)="multimedia()">
+      <img src="../assets/imgs/多媒体机.svg"  style=" height:auto; width: 38%;margin-top: 20px;">
+      <div  class="urlBox-child">多媒体机</div>
+  </div>
+  <div class="urlBox urlBox-top1" (click)="fault()">
+      <img src="../assets/imgs/fault.png"  class="urlImg"/>
+      <div  class="urlBox-child">96333档案</div>
+  </div>
+</div>
+<div class="partent_urlBox" > 
+  <div class="urlBox urlBox-2" (click)="FaultRecord()">
+      <img src="../assets/imgs/故障记录.png"  class="urlImg"/>
+      <div  class="urlBox-child">故障记录</div>
+  </div>
+  <div class="urlBox urlBox-top2" (click)="jx()">
+    <img src="../assets/imgs/电子检修.svg"  class="urlImg"/>
+    <div  class="urlBox-child">电子检修</div>
+</div>
+</div>
+<div class="bg1" (tap)="zb()">
+  <p class="bg-child">直播</p> 
+</div>
+<div class="bg2" (tap)="jc()">
+    <p class="bg-child">监测</p> 
+  </div>
+  <div class="ys" (tap)="goAccpet()">
+  <input type="text"  readonly value="验收提交" >
+</div>
+</div>
+</ion-content>

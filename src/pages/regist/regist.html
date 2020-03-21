@@ -1,0 +1,12 @@
+<ion-content padding>
+    <div class="input-box">
+        <input type="text" placeholder="请输入手机号码" [(ngModel)]="phone" >
+        <input type="text" placeholder="请输入姓名" [(ngModel)]="username" style="margin-top:16px">
+    </div>
+    <div class="logIn" (tap)="register()">
+       <p>注册</p> 
+    </div>
+    <div class="bot_text" (tap)="login()">
+        返回登录
+      </div>
+</ion-content>

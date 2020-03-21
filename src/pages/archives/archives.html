@@ -1,0 +1,151 @@
+<!--
+  Generated template for the ArchivesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+    <ion-navbar >
+        <ion-title  >
+          电梯档案
+        </ion-title>
+      </ion-navbar>
+  <ion-toolbar no-border-top style="padding: 0;min-height:3.6rem;">
+    <ion-segment [(ngModel)]="segmentModel" (ionChange)="segmentChanged()" >
+      <ion-segment-button value="safetyAnaly">
+        基础参数
+      </ion-segment-button>
+      <ion-segment-button value="maintenance">
+        基础参数选择
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of eleList">
+    <div id="safetyAnaly" style="display: block;">
+     <ion-list >
+      <ion-item>
+        <ion-label>电梯注册编码</ion-label>
+        <input type="text" id="Enumber" item-end  value={{item.Enumber}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>96333编码</ion-label>
+        <input type="text"  id="Erecorder"  item-end  value={{item.Erecorder}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>电梯使用单位</ion-label>
+        <input type="text" id="Ename" item-end value={{item.Ename}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>电梯厂商</ion-label>
+        <input type="text"  id="Emodel"  item-end value={{item.Efactory}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>楼层层数</ion-label>
+        <input type="text"  id="Efloor"   item-end value={{item.Efloor}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>额定速度</ion-label>
+        <input type="text" id="Espeed"  item-end value={{item.Espeed}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>电梯地址</ion-label>
+        <input type="text"   id="Eaddress" item-end value={{item.Eaddress}}>
+      </ion-item>
+      <ion-item>
+        <ion-label>电梯安全管理员</ion-label>
+        <input type="text"  id="Euser"  item-end value={{item.Euser}}>
+      </ion-item>
+      <ion-item>
+          <ion-label>维保单位</ion-label>
+          <input type="text" id="Emaintenance"  item-end  value={{item.Emaintenance}}>
+        </ion-item>
+        <ion-item>
+          <ion-label>维保单位负责人</ion-label>
+          <input type="text"  id="Euser2" item-end value={{item.Euser2}}>
+        </ion-item>
+      <ion-item>
+        <ion-label>联系电话</ion-label>
+        <input type="text"   id="Etel2" item-end value={{item.Etel2}}>
+      </ion-item>
+     
+    </ion-list>
+    </div >
+
+    <div id="maintenance" style="display:none">
+      <ion-list >
+          <ion-item>
+          <ion-label>检修</ion-label>
+          <ion-select [(ngModel)]="mainten">
+            <ion-option value="choose">请选择</ion-option>
+            <ion-option value="lowLevel">低电平</ion-option>
+            <ion-option value="highLevel">高电平</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>门开关1</ion-label>
+          <ion-select [(ngModel)]="door1">
+            <ion-option value="choose">请选择</ion-option>
+            <ion-option value="lowLevel">低电平</ion-option>
+            <ion-option value="highLevel">高电平</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>门开关2</ion-label>
+          <ion-select [(ngModel)]="door2">
+            <ion-option value="choose">请选择</ion-option>
+            <ion-option value="lowLevel">低电平</ion-option>
+            <ion-option value="highLevel">高电平</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>平层1</ion-label>
+          <ion-select [(ngModel)]="flatLayer1">
+              <ion-option value="choose">请选择</ion-option>
+              <ion-option value="lowLevel">低电平</ion-option>
+              <ion-option value="highLevel">高电平</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>平层2</ion-label>
+            <ion-select [(ngModel)]="flatLayer2">
+                <ion-option value="choose">请选择</ion-option>
+                <ion-option value="lowLevel">低电平</ion-option>
+                <ion-option value="highLevel">高电平</ion-option>
+            </ion-select>
+          </ion-item>
+        <ion-item>
+          <ion-label>楼层层高</ion-label>
+          <input type="text" id="EfloorHeight" item-end value={{item.EfloorHeight}}>
+        </ion-item>
+        <ion-item>
+          <ion-label>平层信号总数</ion-label>
+          <input type="text"  id="EsignalCount"  item-end value={{item.EsignalCount}} >
+        </ion-item>  
+        <ion-item (tap)="reset()">
+            <ion-label>操作</ion-label>
+            <input type="text" readonly (tap)="reset()" style="width: 80px;height: 32px; border-radius: 16px; border: 1px solid #4B5E90; text-align: center;color: #4B5E90;font-size: 14px;font-family: PingFang SC Regular;"item-end value="重置楼层"  >
+          </ion-item>  
+        <div id="programTable" >
+          <div  id="el{{device.lc}}" class="operation"  *ngFor="let device of arr; let i = index">
+            <ion-item>
+                <input  type=checkbox id="ch{{i}}" (tap)="choose(i)">
+                <input  type="text"   id="EsignalCount{{i}}"  item-end value={{device.lc}}>
+              </ion-item> 
+            </div>
+        </div>    
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer align-title="left" class="bar-assertive">
+    <div class="input-box">
+        <input type="text" readonly value="设备重启" (tap)="restart()">
+        <input type="text" readonly value="远程上传" (tap)="upload()">
+        <input type="text" readonly value="远程下载" (tap)="down()" >
+        <input type="text" readonly value="确认更改"  (tap)="confirm()">
+    </div>
+</ion-footer>

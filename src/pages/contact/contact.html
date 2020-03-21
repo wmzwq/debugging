@@ -1,0 +1,59 @@
+<ion-content>
+    <div class="header">
+      <ion-navbar no-border-bottom>
+        <ion-buttons right>
+        
+        </ion-buttons>
+      </ion-navbar>
+      <div>
+        <div class="portrait" text-center (tap)="doCamera()">
+            <img  *ngIf="base64Image" [src]="base64Image">
+          <ion-icon name="person"></ion-icon>
+        </div>
+        <div class="info">
+          <p>{{user}}</p>
+          <span>电梯安装调试</span>
+        </div>
+      </div>
+    </div>
+    <div class="center-card">
+      <div>
+        <p>0</p>
+        <span>已安装电梯数</span>
+      </div>
+      <span></span>
+      <div>
+        <p>0</p>
+        <span>已验收电梯数</span>
+      </div>
+    </div>
+    <div class="radius-box">
+      <div>
+        <div class="circle" text-center>
+          <ion-icon name="account"></ion-icon>
+        </div>
+        <div class="information">
+          <p>账号</p>
+          <span>{{account}}</span>
+        </div>
+      </div>
+      <div>
+        <div class="circle" text-center>
+          <ion-icon name="tel"></ion-icon>
+        </div>
+        <div class="information">
+          <p>手机</p>
+          <span>{{account}}</span>
+        </div>
+      </div>
+      
+    </div>
+    <div >
+        <button ion-button block (tap)="wx()">
+           微信url地址
+          </button>
+      <button ion-button block (tap)="logout()">
+        注销
+      </button>
+    </div>
+  </ion-content>

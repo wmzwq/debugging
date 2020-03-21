@@ -1,0 +1,57 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>96333档案配置</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div *ngFor="let item of recordList">
+  <ion-list >
+    <ion-item>
+      <ion-label>营业执照代码</ion-label>
+      <input type="text" id="F_License" item-end  value={{item?.F_License}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>视频流地址</ion-label>
+      <input type="text"  id="F_VideoUrl"  item-end  value={{item?.F_VideoUrl}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>实时数据地址</ion-label>
+      <input type="text" id="F_RealUrl" item-end value={{item?.F_RealUrl}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>接口编号1</ion-label>
+      <input type="text"  id="F_InterfaceNumber1"  item-end value={{item?.F_InterfaceNumber1}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>接口网址1</ion-label>
+      <input type="text"  id="F_InterfaceUrl1"   item-end value={{item?.F_InterfaceUrl1}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>接口密码1</ion-label>
+      <input type="text" id="F_InterfacePassword1"  item-end value={{item?.F_InterfacePassword1}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>接口编号2</ion-label>
+      <input type="text"   id="F_InterfaceNumber2" item-end value={{item?.F_InterfaceNumber2}}>
+    </ion-item>
+    <ion-item>
+      <ion-label>接口网址2</ion-label>
+      <input type="text"  id="F_InterfaceUrl2"  item-end value={{item?.F_InterfaceUrl2}}>
+    </ion-item>
+    <ion-item>
+        <ion-label>接口密码2</ion-label>
+        <input type="text" id="F_InterfacePassword2"  item-end  value={{item?.F_InterfacePassword2}}>
+      </ion-item>
+  </ion-list>
+  </div>
+</ion-content>
+<ion-footer align-title="left" class="bar-assertive">
+  <div class="input-box">
+      <input type="text" readonly value="远程上传" (tap)="upload()">
+      <input type="text" readonly value="远程下载" (tap)="down()" >
+      <input type="text" readonly value="最新档案"  (tap)="paste()">
+      <input type="text" readonly value="确认更改"  (tap)="confirm()"> 
+  </div>
+</ion-footer>

@@ -1,0 +1,130 @@
+<!--
+  Generated template for the ArchivesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>设备控制</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content>
+  <div id="safetyAnaly" style="display: block;">
+    <ion-list>
+      <ion-item>
+        <ion-label>分辨率设置</ion-label>
+        <ion-select [(ngModel)]="resolution">
+          <ion-option value="choose">==请选择==</ion-option>
+          <ion-option value="1920">1080P(1920*1080)</ion-option>
+          <ion-option value="720">720P(1024*768)</ion-option>
+          <ion-option value="600"> 600P(800*600)</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>麦克风音量</ion-label>
+        <ion-select [(ngModel)]="microphone">
+          <ion-option value="choose">==请选择==</ion-option>
+          <ion-option value="100">100</ion-option>
+          <ion-option value="90">90</ion-option>
+          <ion-option value="80">80</ion-option>
+          <ion-option value="70">70</ion-option>
+          <ion-option value="60">60</ion-option>
+          <ion-option value="50">50</ion-option>
+          <ion-option value="40">40</ion-option>
+          <ion-option value="30">30</ion-option>
+          <ion-option value="20">20</ion-option>
+          <ion-option value="10">10</ion-option>
+          <ion-option value="0">0</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>视频音量</ion-label>
+        <ion-select [(ngModel)]="video">
+          <ion-option value="choose">请选择</ion-option>
+          <ion-option value="100">100</ion-option>
+          <ion-option value="90">90</ion-option>
+          <ion-option value="80">80</ion-option>
+          <ion-option value="70">70</ion-option>
+          <ion-option value="60">60</ion-option>
+          <ion-option value="50">50</ion-option>
+          <ion-option value="40">40</ion-option>
+          <ion-option value="30">30</ion-option>
+          <ion-option value="25">25</ion-option>
+          <ion-option value="20">20</ion-option>
+          <ion-option value="15">15</ion-option>
+          <ion-option value="10">10</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="0">0</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>音箱音量</ion-label>
+        <ion-select [(ngModel)]="speakers">
+          <ion-option value="choose">==请选择==</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="1">1</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>主板音量</ion-label>
+        <ion-select [(ngModel)]="SMDTVolume">
+          <ion-option value="choose">==请选择==</ion-option>
+          <ion-option value="15">15</ion-option>
+          <ion-option value="14">14</ion-option>
+          <ion-option value="13">13</ion-option>
+          <ion-option value="12">12</ion-option>
+          <ion-option value="11">11</ion-option>
+          <ion-option value="10">10</ion-option>
+          <ion-option value="9">9</ion-option>
+          <ion-option value="8">8</ion-option>
+          <ion-option value="7">7</ion-option>
+          <ion-option value="6">6</ion-option>
+          <ion-option value="5">5</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="1">1</ion-option>
+          <ion-option value="0">0</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>视频质量</ion-label>
+          <ion-select [(ngModel)]="videoFrame ">
+            <ion-option value="choose">==请选择==</ion-option>
+            <ion-option value="1.0">1.0</ion-option>
+            <ion-option value="1.5">1.5</ion-option>
+            <ion-option value="2.0"> 2.0</ion-option>
+            <ion-option value="2.5"> 2.5</ion-option>
+            <ion-option value="3.0"> 3.0</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>视频码率</ion-label>
+            <ion-select [(ngModel)]="videoBit  ">
+              <ion-option value="choose">==请选择==</ion-option>
+              <ion-option value="500000">500000</ion-option>
+              <ion-option value="750000">750000</ion-option>
+              <ion-option value="1000000">1000000</ion-option>
+              <ion-option value="1200000">1200000</ion-option>
+              <ion-option value="1500000">1500000</ion-option>
+              <ion-option value="2000000">2000000</ion-option>
+            </ion-select>
+          </ion-item>
+    
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer align-title="left" class="bar-assertive">
+    <div class="input-box">
+        <input type="text" readonly value="软件重启" (tap)="restart()">
+        <input type="text" readonly value="主板重启" (tap)="mRestart()">
+        <input type="text" readonly value="确认更改"  (tap)="confirm()">
+    </div>
+</ion-footer>

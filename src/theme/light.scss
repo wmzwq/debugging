@@ -1,0 +1,78 @@
+
+  ion-content {
+    color: #333;
+  }
+
+  .list-ios,
+  .list-md {
+    margin: -1px 4px 32px;
+  }
+
+  //header
+  .tab-button {
+    background-color: #fff;
+  }
+
+  .tabs-ios .tabbar,
+  .tabs-md .tabbar {
+    border: none;
+    box-shadow: 0px 0px 16px rgba(69, 91, 99, 0.08);
+  }
+
+  .toolbar-background-ios,
+  .toolbar-background-md {
+    background: #fff;
+    border-style: none !important;
+  }
+
+  .tabs-ios .tab-button-text {
+    margin-bottom: 5px;
+  }
+
+  .tabs-ios .tab-button-icon {
+    height: 26px;
+    padding-top: 3px;
+  }
+
+  .toolbar-title-ios {
+    font-size: 1.8rem;
+    font-weight: normal;
+
+  }
+
+  ion-header {
+    box-shadow: 0px 2px 20px rgba(69, 91, 99, 0.078);
+  }
+
+  //卡片样式
+  .rank{
+    margin: 4px 12px;
+  }
+
+  .card-ios,
+  .card-md {
+    border-radius: 6px;
+    box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.078);
+  }
+
+  .blue-dot,
+  .red-dot,
+  .gray-dot {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 2px;
+     margin-bottom: 1px;
+  }
+
+  .blue-dot {
+    background-color: #3497FD;
+  }
+
+  .red-dot {
+    background-color: #FFA681;
+  }
+  .gray-dot {
+    background-color: #BFBFBF;
+  }
+

@@ -1,0 +1,262 @@
+<!--
+  Generated template for the AcceptancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>验收提交</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top style="padding: 0;min-height:3.6rem;">
+    <ion-segment [(ngModel)]="segmentModel" (ionChange)="segmentChanged()">
+      <ion-segment-button value="capsules">
+        轿厢
+      </ion-segment-button>
+      <ion-segment-button value="carRoof">
+        轿顶
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="capsules" style="display: block;">
+    <div>
+      <ion-item>
+        <h2>一、轿厢传感器</h2>
+      </ion-item>
+      <span>1、靠近操作面板上方（安装位置和操作面板照片）<br></span>
+      <span>2、不靠近通风口<br></span>
+      <span>3、通话口靠近轿厢中间位置<br></span>
+      <span>4、走线美观<br></span>
+      <span>5、安装牢靠<br></span>
+      <div>
+        <img src="../assets/imgs/轿厢传感器.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList1">
+        <div *ngFor="let fileObj1 of fileObjList1, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,1)">×</span>
+          <img src="{{fileObj1.thumbPath}}" tappable (click)="viewerPicture(i,1)">
+        </div>
+        <div *ngIf="fileObjList1.length<max&&allowAdd" tappable (click)="addPicture(1)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>二、摄像头</h2>
+      </ion-item>
+      <span>1、摄像头安装位置应能覆盖轿厢出入口和地板3/4的面积,应能清楚看到楼层面板和轿厢门<br></span>
+      <span>2、摄像头安装一定要用打孔方式，打孔位置不能影响电梯功能（安装位置照片）<br></span>
+      <div>
+        <img src="/assets/imgs/摄像头.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList2">
+        <div *ngFor="let fileObj2 of fileObjList2, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,2)">×</span>
+          <img src="{{fileObj2.thumbPath}}" tappable (click)="viewerPicture(i,2)">
+        </div>
+        <div *ngIf="fileObjList2.length<max&&allowAdd" tappable (click)="addPicture(2)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <ion-item>
+        <h2>三、有线警铃</h2>
+      </ion-item>
+      <span>1、安装高度>160cm（防止儿童误触）<br></span>
+      <span>2、连接线必须套线管或者走外壁过<br></span>
+      <span>3、走线美观<br></span>
+      <span>4、安装牢靠<br></span>
+      <div>
+        <img src="/assets/imgs/警铃.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList3">
+        <div *ngFor="let fileObj3 of fileObjList3, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,3)">×</span>
+          <img src="{{fileObj3.thumbPath}}" tappable (click)="viewerPicture(i,3)">
+        </div>
+        <div *ngIf="fileObjList3.length<max&&allowAdd" tappable (click)="addPicture(3)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>四、检修</h2>
+      </ion-item>
+      <span>1、检修开关安装于显眼处<br></span>
+      <span>2、安装位置不能影响电梯运行，不影响后期维保作业<br></span>
+      <div>
+        <img src="/assets/imgs/检修.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList4">
+        <div *ngFor="let fileObj4 of fileObjList4, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,4)">×</span>
+          <img src="{{fileObj4.thumbPath}}" tappable (click)="viewerPicture(i,4)">
+        </div>
+        <div *ngIf="fileObjList4.length<max&&allowAdd" tappable (click)="addPicture(4)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>五、4G卡</h2>
+      </ion-item>
+      <span>1、清晰<br></span>
+      <div>
+        <img src="/assets/imgs/4G卡.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList5">
+        <div *ngFor="let fileObj5 of fileObjList5, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,5)">×</span>
+          <img src="{{fileObj5.thumbPath}}" tappable (click)="viewerPicture(i,5)">
+        </div>
+        <div *ngIf="fileObjList5.length<max&&allowAdd" tappable (click)="addPicture(5)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+
+      <ion-item>
+        <h2>六、合同号</h2>
+      </ion-item>
+      <span>1、清晰<br></span>
+      <div>
+        <img src="/assets/imgs/合同号.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList6">
+        <div *ngFor="let fileObj6 of fileObjList6, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,6)">×</span>
+          <img src="{{fileObj6.thumbPath}}" tappable (click)="viewerPicture(i,6)">
+        </div>
+        <div *ngIf="fileObjList6.length<max&&allowAdd" tappable (click)="addPicture(6)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="carRoof" style="display:none">
+    <div>
+      <ion-item>
+        <h2>一、网桥</h2>
+      </ion-item>
+      <span>1、上网桥朝下(上网桥照片)<br></span>
+      <span>2、下网桥朝上(下网桥照片)<br></span>
+      <span>3、上下网桥之间不能有阻挡物<br></span>
+      <span>4、电梯在顶楼时上下网桥之间应该面对面(下网桥照片)<br></span>
+      <span>5、安装牢靠<br></span>
+      <span>6、走线美观<br></span>
+      <div>
+        <img src="/assets/imgs/上网桥.jpg" style="float:left;margin-left:20px;width:120px;height:120px" imageViewer>
+        <img src="/assets/imgs/下网桥.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList7">
+        <div *ngFor="let fileObj7 of fileObjList7, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,7)">×</span>
+          <img src="{{fileObj7.thumbPath}}" tappable (click)="viewerPicture(i,7)">
+        </div>
+        <div *ngIf="fileObjList7.length<max&&allowAdd" tappable (click)="addPicture(7)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <ion-item>
+        <h2>二、平层传感器</h2>
+      </ion-item>
+      <span>1、U型平层安装位置是否有超出原来电梯平层。(多角度照片)<br></span>
+      <span>2、扎带捆绑是否挡住发射与接收之间<br></span>
+      <span>3、上下平层安装发射与接收是否在同一侧，不得交叉<br></span>
+      <span>4、走线合理<br></span>
+      <div>
+        <img src="/assets/imgs/平层侧面.jpg" style="float:left;margin-left:20px;width:120px;height:120px" imageViewer>
+        <img src="/assets/imgs/平层正面.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList8">
+        <div *ngFor="let fileObj8 of fileObjList8, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,8)">×</span>
+          <img src="{{fileObj8.thumbPath}}" tappable (click)="viewerPicture(i,8)">
+        </div>
+        <div *ngIf="fileObjList8.length<max&&allowAdd" tappable (click)="addPicture(8)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>三、门开关传感器</h2> 
+      </ion-item>
+      <span>1、与被测金属部件距离保持在3-5mm。(图片)<br></span>
+      <span>2、安装位置不会影响电梯门的正常运作<br></span>
+      <span>3、走线合理<br></span>
+      <div>
+        <img src="/assets/imgs/门开关传感器.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList9">
+        <div *ngFor="let fileObj9 of fileObjList9, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,9)">×</span>
+          <img src="{{fileObj9.thumbPath}}" tappable (click)="viewerPicture(i,9)">
+        </div>
+        <div *ngIf="fileObjList9.length<max&&allowAdd" tappable (click)="addPicture(9)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>四、喇叭</h2>
+      </ion-item>
+      <span>1、喇叭发声面不能朝下,正常放置(照片)<br></span>
+      <span>2、摆放位置不影响后期维保人员作业<br></span>
+      <div>
+        <img src="/assets/imgs/示例.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList10">
+        <div *ngFor="let fileObj10 of fileObjList10, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,10)">×</span>
+          <img src="{{fileObj10.thumbPath}}" tappable (click)="viewerPicture(i,10)">
+        </div>
+        <div *ngIf="fileObjList10.length<max&&allowAdd" tappable (click)="addPicture(10)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div>
+      <ion-item>
+        <h2>五、电梯物联设备-网关</h2>
+      </ion-item>
+      <span>1、设备安装位置是否合理（黑匣子安装好的照片）<br></span>
+      <span>2、紧固方式是否达到无法移动和旋转<br></span>
+      <span>3、走线合理,所有走线不能有飞线,悬挂的线要用扎带固定好（多张照片覆盖轿厢顶部）<br></span>
+      <span>4、黑匣子是否正装<br></span>
+      <span>5、电源是否插的牢靠<br></span>
+      <div>
+        <img src="/assets/imgs/黑匣子.jpg" style="float:left;margin-left:20px;width:120px;height:120px" imageViewer>
+        <img src="/assets/imgs/示例.jpg" style="margin-left:20px;width:120px;height:120px" imageViewer>
+      </div>
+      <div class="clear-fix" style="padding-top: 2px;" *ngIf="fileObjList11">
+        <div *ngFor="let fileObj11 of fileObjList11, let i = index" class="pictures">
+          <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i,11)">×</span>
+          <img src="{{fileObj11.thumbPath}}" tappable (click)="viewerPicture(i,11)">
+        </div>
+        <div *ngIf="fileObjList11.length<max&&allowAdd" tappable (click)="addPicture(11)" class="pictures add">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer align-title="left" class="bar-assertive">
+  <div class="input-box">
+    <button  (tap)="uploadForm()">验收上传</button>
+    <button  (tap)="go96333()">提交96333</button>
+  </div>
+</ion-footer>
