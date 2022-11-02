@@ -40,7 +40,7 @@
     "@types/cordova-plugin-file-transfer": "^1.6.2",
     "@types/cordova-plugin-inappbrowser": "^2.0.0",
     "@types/js-base64": "^2.3.1",
-    "cordova-android": "^7.1.4",
+    "cordova-android": "^11.0.0",
     "cordova-browser": "^6.0.0",
     "cordova-ios": "^5.0.1",
     "cordova-plugin-app-version": "^0.1.9",
